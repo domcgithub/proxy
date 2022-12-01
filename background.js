@@ -1,12 +1,13 @@
 // get the values saved from browser settings
 let user_setting = browser.proxy.settings.get({});
+
 user_setting.then((got) => {
-  console.log(`Value: ${got.value}`);
-  console.log(`Control: ${got.levelOfControl}`);
+  console.log(got.value);
+  console.log(got.levelOfControl);
+});
 
 let proxySettingsOn = {
-  proxyType: "manual",
-  "value": got.value
+  value: user_setting.value
 };
 
 
@@ -58,8 +59,6 @@ function toggle(){
 // invoke function
 browser.browserAction.onClicked.addListener(toggle);
 
-// moved bracket curly braces from browser.get 
-});
 
 
 
