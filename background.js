@@ -30,7 +30,7 @@ function toggle(){
     flag = true;
   }
 
-  if (flag == true){
+  else if (flag == true){
     off();
     browser.browserAction.setIcon({path: "icons/off-48.png"});
     flag = false;
