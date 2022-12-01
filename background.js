@@ -8,12 +8,12 @@ user_setting.then((got) => {
 
 
 // manually hardcoded on values for now
-// let proxySettingsOn = {
-//   proxyType: "manual",
-//   socks: "10.64.0.1:1080",
-//   socksVersion: 5,
-//   proxyDNS: true 
-// };
+let proxySettingsOn = {
+  proxyType: "manual",
+  socks: "10.64.0.1:1080",
+  socksVersion: 5,
+  proxyDNS: true 
+};
 
 // set a constant for no proxy
 const proxySettingsOff = {
