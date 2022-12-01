@@ -1,5 +1,9 @@
 // get the values saved from browser settings
 let user_setting = browser.proxy.settings.get({});
+user_setting.then((got) => {
+  console.log(`Value: ${got.value}`);
+  console.log(`Control: ${got.levelOfControl}`);
+});
 
 let proxySettingsOn = {
   proxyType: "manual",
