@@ -1,9 +1,11 @@
 // get the values saved from browser settings
-const user_setting = browser.proxy.settings.get({});
+let user_setting = browser.proxy.settings.get({});
 
 let proxySettingsOn = {
   proxyType: "manual",
-  value: "user_setting"
+  socks: "10.64.0.1:1080",
+  socksVersion: 5,
+  proxyDNS: true 
 };
 
 // set a constant for no proxy
