@@ -5,6 +5,7 @@ user_setting.then((got) => {
   console.log(`Control: ${got.levelOfControl}`);
 
 let proxySettingsOn = {
+  proxyType: "manual",
   value: got.value
 };
 
