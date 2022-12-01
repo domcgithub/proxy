@@ -21,7 +21,8 @@ function off(){
 
 // create function for toggle 
 function toggle(){
-  // create listener for button click
+  
+  // create listener for button click and match status
   let status = 0;
   
   if (status == 0){

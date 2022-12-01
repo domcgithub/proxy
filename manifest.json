@@ -1,41 +1,26 @@
 {
     "manifest_version": 2,
-    "name": "Proxy Toggle",
-    "version": "1.2.1",
-    "description": "Toggle between direct connection and using a proxy server.",
+    "name": "Proxy Shortcut",
+    "version": "1.0",
+    "description": "Toggle between proxy setting on/off.",
     "icons": {
-        "48": "icons/p1.svg",
-        "96": "icons/p1.svg"
+        "48": "icons/off-48.png"
     },
     "permissions": [
-        "storage",
-        "proxy",
-        "<all_urls>",
-        "webRequest",
-        "webRequestBlocking"
+        "proxy"
     ],
+
     "browser_action": {
         "browser_style": true,
-        "default_icon": "icons/p1.svg",
-        "default_title": "Proxy Toggle"
-    },
-    "commands": {
-        "_execute_browser_action": {
-            "suggested_key": {
-                "default": "Ctrl+Shift+Y"
-            },
-            "description": "Toggle proxy on/off"
-        }
+        "default_icon": "icons/off-48.png",
+        "default_title": "Proxy On/Off"
     },
     "background": {
         "scripts": [
             "background.js"
         ]
     },
-    "options_ui": {
-        "page": "settings.html",
-        "browser_style": true
-    },
+
     "applications": {
         "gecko": {
             "strict_min_version": "60.0"
