@@ -1,7 +1,5 @@
 // get the values saved from browser settings
-let proxySettingsOn = {
-    proxyType: "system"
-  }; 
+let user_setting = browser.proxy.settings.get()
 
 // set a constant for no proxy
 const proxySettingsOff = {
@@ -10,7 +8,7 @@ const proxySettingsOff = {
 
 // turn on function
 function on(){
-  browser.proxy.settings.set({value: proxySettingsOn});
+  browser.proxy.settings.set({value: user_setting});
 }
 
 function off(){
