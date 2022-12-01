@@ -54,11 +54,11 @@ function toggle(){
   flag = !flag
 }
 
-// moved bracket curly braces from browser.get 
-});
-
 // invoke function
 browser.browserAction.onClicked.addListener(toggle);
+
+// moved bracket curly braces from browser.get 
+});
 
 
 
