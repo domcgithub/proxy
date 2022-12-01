@@ -7,7 +7,7 @@ user_setting.then((got) => {
 let proxySettingsOn = {
   value: got.value
 };
-});
+
 
 // manually hardcoded on values for now
 // let proxySettingsOn = {
@@ -53,6 +53,9 @@ function toggle(){
   // important to flip flag status every time
   flag = !flag
 }
+
+// moved bracket curly braces from browser.get 
+});
 
 // invoke function
 browser.browserAction.onClicked.addListener(toggle);
