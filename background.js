@@ -1,5 +1,5 @@
 // get the values saved from browser settings
-let user_setting = browser.proxy.settings.get()
+let user_setting = browser.proxy.settings.get({})
 
 // set a constant for no proxy
 const proxySettingsOff = {
