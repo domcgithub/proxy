@@ -6,7 +6,7 @@ user_setting.then((got) => {
 
 let proxySettingsOn = {
   proxyType: "manual",
-  value: got.value
+  "value": got.value
 };
 
 
