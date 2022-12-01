@@ -19,23 +19,21 @@ function off(){
   browser.proxy.settings.set({value: proxySettingsOff});
 }
 
-let status = false;
+let flag = false;
 // create function for toggle 
 function toggle(){
   
   // create listener for button click and match status
-  
-  
-  if (status == false){
+  if (flag == false){
     on();
     browser.browserAction.setIcon({path: "icons/on-48.png"});
-    return status = true;
+    flag = true;
   }
 
-  if (status == true){
+  if (flag == true){
     off();
     browser.browserAction.setIcon({path: "icons/off-48.png"});
-    status = false;
+    flag = false;
   }
 }
 
