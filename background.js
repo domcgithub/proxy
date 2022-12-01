@@ -1,8 +1,6 @@
 // get the values saved from browser settings
 let proxySettingsOn = {
-    proxyType: "system",
-    httpProxyAll: true,
-    passthrough: "localhost"
+    proxyType: "system"
   }; 
 
 // set a constant for no proxy
@@ -23,19 +21,22 @@ function off(){
 function toggle(){
   
   // create listener for button click and match status
+  
   let status = 0;
   
   if (status == 0){
-    browser.browserAction.onClicked.addListener(on());
+    on();
     browser.browserAction.setIcon({path: "icons/on-48.png"});
     status++;
   }
   if (status == 1){
-    browser.browserAction.onClicked.addListener(off());
+    off();
     browser.browserAction.setIcon({path: "icons/off-48.png"});
     status--;
   }
 }
+
+browser.browserAction.onClicked.addListener(toggle);
 
 
 
