@@ -22,17 +22,18 @@ function toggle(){
   
   // create listener for button click and match status
   
-  let status = 0;
+  let status = false;
   
-  if (status == 0){
+  if (status == false){
     on();
     browser.browserAction.setIcon({path: "icons/on-48.png"});
-    status++;
+    status = true;
+
   }
-  if (status == 1){
+  if (status == true){
     off();
     browser.browserAction.setIcon({path: "icons/off-48.png"});
-    status--;
+    status = false;
   }
 }
 
