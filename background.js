@@ -1,9 +1,9 @@
 // get the values saved from browser settings
-// let user_setting = browser.proxy.settings.get({})
+let user_setting = browser.proxy.settings.get({})
 
-let proxySettingsOn = {
-  proxyType: "manual"
-};
+// let proxySettingsOn = {
+//   proxyType: "manual"
+// };
 
 // set a constant for no proxy
 const proxySettingsOff = {
@@ -12,7 +12,7 @@ const proxySettingsOff = {
 
 // turn on function
 function on(){
-  browser.proxy.settings.set({value: proxySettingsOn});
+  browser.proxy.settings.set({value: user_setting});
 }
 
 function off(){
@@ -30,7 +30,7 @@ function toggle(){
     flag = true;
   }
 
-  else if (flag == true){
+  else {
     off();
     browser.browserAction.setIcon({path: "icons/off-48.png"});
     flag = false;
