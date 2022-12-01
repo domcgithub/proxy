@@ -7,7 +7,7 @@ user_setting.then((got) => {
 });
 
 let proxySettingsOn = {
-  value: user_setting.value
+  value: got.value
 };
 
 
