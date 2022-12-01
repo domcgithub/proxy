@@ -27,10 +27,12 @@ function toggle(){
   
   if (status == 0){
     browser.browserAction.onClicked.addListener(on());
+    browser.browserAction.setIcon({path: "icons/on-48.png"});
     status++;
   }
   if (status == 1){
     browser.browserAction.onClicked.addListener(off());
+    browser.browserAction.setIcon({path: "icons/off-48.png"});
     status--;
   }
 }
