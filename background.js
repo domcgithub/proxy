@@ -13,10 +13,12 @@ const proxySettingsOff = {
 // turn on function
 function on(){
   browser.proxy.settings.set({value: user_setting});
+  console.log("proxy on")
 }
 
 function off(){
   browser.proxy.settings.set({value: proxySettingsOff});
+  console.log("proxy off")
 }
 
 let flag = false;
@@ -24,17 +26,14 @@ let flag = false;
 function toggle(){
   
   // create listener for button click and match status
-  if (flag == false){
-    on();
-    browser.browserAction.setIcon({path: "icons/on-48.png"});
-    flag = true;
-  }
-
-  else {
+  if (flag){
     off();
     browser.browserAction.setIcon({path: "icons/off-48.png"});
-    flag = false;
+  } else {
+    on();
+    browser.browserAction.setIcon({path: "icons/on-48.png"});
   }
+  flag = !flag
 }
 
 browser.browserAction.onClicked.addListener(toggle);
@@ -44,4 +43,3 @@ browser.browserAction.onClicked.addListener(toggle);
 
 
 
-  
