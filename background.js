@@ -6,6 +6,7 @@ user_setting.then((got) => {
   console.log(got.levelOfControl);
 });
 
+// TODO how to softcode the user proxy settings
 
 // manually hardcoded on values for now
 let proxySettingsOn = {
