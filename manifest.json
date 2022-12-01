@@ -13,7 +13,7 @@
     "browser_action": {
         "browser_style": true,
         "default_icon": "icons/off-48.png",
-        "default_title": "Proxy On/Off"
+        "default_title": "Proxy Off"
     },
     "background": {
         "scripts": [

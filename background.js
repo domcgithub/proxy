@@ -3,15 +3,19 @@ let user_setting = browser.proxy.settings.get({});
 user_setting.then((got) => {
   console.log(`Value: ${got.value}`);
   console.log(`Control: ${got.levelOfControl}`);
+
+let proxySettingsOn = {
+  value: got.value
+};
 });
 
 // manually hardcoded on values for now
-let proxySettingsOn = {
-  proxyType: "manual",
-  socks: "10.64.0.1:1080",
-  socksVersion: 5,
-  proxyDNS: true 
-};
+// let proxySettingsOn = {
+//   proxyType: "manual",
+//   socks: "10.64.0.1:1080",
+//   socksVersion: 5,
+//   proxyDNS: true 
+// };
 
 // set a constant for no proxy
 const proxySettingsOff = {
@@ -35,7 +39,7 @@ let flag = false;
 // create function for toggle 
 function toggle(){
   
-  // create listener for button click and match status
+  // create listener for button click and match flag
   if (flag){
     off();
     browser.browserAction.setIcon({path: "icons/off-48.png"});
@@ -45,6 +49,8 @@ function toggle(){
     browser.browserAction.setIcon({path: "icons/on-48.png"});
     browser.browserAction.setTitle({"title": "Proxy On"});
   }
+
+  // important to flip flag status every time
   flag = !flag
 }
 
