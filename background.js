@@ -5,6 +5,7 @@ user_setting.then((got) => {
   console.log(`Control: ${got.levelOfControl}`);
 });
 
+// manually hardcoded on values for now
 let proxySettingsOn = {
   proxyType: "manual",
   socks: "10.64.0.1:1080",
@@ -17,7 +18,7 @@ const proxySettingsOff = {
     proxyType: "none"
   };
 
-// turn on function
+// turn on and off function
 function on(){
   browser.proxy.settings.set({value: proxySettingsOn});
   console.log("proxy on")
@@ -28,7 +29,9 @@ function off(){
   console.log("proxy off")
 }
 
+// setting flag states for proxy on/off
 let flag = false;
+
 // create function for toggle 
 function toggle(){
   
@@ -45,6 +48,7 @@ function toggle(){
   flag = !flag
 }
 
+// invoke function
 browser.browserAction.onClicked.addListener(toggle);
 
 
